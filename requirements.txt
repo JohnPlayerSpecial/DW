@@ -1,6 +1,7 @@
 telegraphapi==0.5
 feedparser==5.2.1
-python_telegram_bot==5.3.1
+python_telegram_bot==7.0.1
 telegram==0.0.1
 newspaper3k==0.1.9
 textblob==0.13.0
+requests==2.18.4
