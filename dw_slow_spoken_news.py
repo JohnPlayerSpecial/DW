@@ -10,7 +10,7 @@ import requests
 from telegram.ext import *
 import datetime
 import time
-
+import os
 
 TOKEN_TELEGRAM = os.environ['TOKEN_TELEGRAM']
 bot = telegram.Bot(TOKEN_TELEGRAM)
