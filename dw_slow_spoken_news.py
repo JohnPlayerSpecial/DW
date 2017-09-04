@@ -13,7 +13,6 @@ import time
 
 
 TOKEN_TELEGRAM = os.environ['TOKEN_TELEGRAM']
-TELEGRAPH_ACCOUNT = os.environ['TELEGRAPH_ACCOUNT']
 bot = telegram.Bot(TOKEN_TELEGRAM)
 TELEGRAPH_ACCOUNT = 'DW'
 telegraph = Telegraph()
