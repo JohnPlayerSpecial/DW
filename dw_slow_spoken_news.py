@@ -1,14 +1,10 @@
-from __future__ import print_function
 import feedparser
 from textblob import TextBlob
-import textblob
-from textblob import *
 from telegraphapi import Telegraph
 import telegram
 from telegram.error import Unauthorized, NetworkError
 import re
 from newspaper import Article
-from random import randint
 import sys
 import requests
 from telegram.ext import *
@@ -16,12 +12,10 @@ import datetime
 import time
 
 
-#TOKEN_TELEGRAM = os.environ['TOKEN_TELEGRAM']
-#TELEGRAPH_ACCOUNT = os.environ['TELEGRAPH_ACCOUNT']
-
-TOKEN_TELEGRAM = '377926488:AAHr81UaMC-gBKHDXd-UbpnL0QkD8T_2nlo'
+TOKEN_TELEGRAM = os.environ['TOKEN_TELEGRAM']
+TELEGRAPH_ACCOUNT = os.environ['TELEGRAPH_ACCOUNT']
 bot = telegram.Bot(TOKEN_TELEGRAM)
-TELEGRAPH_ACCOUNT = 'f126ck'
+TELEGRAPH_ACCOUNT = 'DW'
 telegraph = Telegraph()
 telegraph.createAccount(TELEGRAPH_ACCOUNT)
 
@@ -84,7 +78,9 @@ def ciao(bot, job):
 j = updater.job_queue
 timeIWannaGetMsg = 9
 utc_offset_heroku = time.localtime().tm_gmtoff / 3600
+print(utc_offset_heroku)
 hour = timeIWannaGetMsg + ( int(utc_offset_heroku) - 2 ) # 2 is my offset
+print(hour)
 time2 = datetime.time(hour ,0)
 
 j.run_daily(ciao, time2 )
