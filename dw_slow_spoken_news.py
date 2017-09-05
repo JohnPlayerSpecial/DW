@@ -75,12 +75,13 @@ def ciao(bot, job):
 		bot.sendAudio( chat_id = chat_id, audio = mp3Url, caption = caption )
 
 j = updater.job_queue
-timeIWannaGetMsg = 9
+HOUR_I_WANNA_GET_MESSAGE = 12
+MINUTES_I_WANNA_GET_MESSAGE = 12
 utc_offset_heroku = time.localtime().tm_gmtoff / 3600
 print(utc_offset_heroku)
 hour = timeIWannaGetMsg + ( int(utc_offset_heroku) - 2 ) # 2 is my offset
 print(hour)
-time2 = datetime.time(hour ,0)
+time2 = datetime.time(hour ,MINUTES_I_WANNA_GET_MESSAGES)
 
 j.run_daily(ciao, time2 )
 
