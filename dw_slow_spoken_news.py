@@ -71,8 +71,7 @@ updater = Updater(TOKEN_TELEGRAM)
 dp = updater.dispatcher
 updater.dispatcher.add_handler(CommandHandler('start', start))
 
-def ciao(bot, job):
-	print("func ciao")
+def sendNews(bot, job):
 	text, caption, mp3Url = getDailyNews()
 	for chat_id in chat_idList:
 		bot.sendMessage(chat_id = chat_id, text = text, parse_mode="Html")
@@ -81,12 +80,10 @@ def ciao(bot, job):
 j = updater.job_queue
 
 utc_offset_heroku = time.localtime().tm_gmtoff / 3600
-print(utc_offset_heroku)
 hour = HOUR_I_WANNA_GET_MESSAGE+ ( int(utc_offset_heroku) - 2 ) # 2 is my offset
-print(hour)
 time2 = datetime.time(hour ,MINUTES_I_WANNA_GET_MESSAGE)
 
-j.run_daily(ciao, time2 )
+j.run_daily(sendNews, time2 )
 
 updater.start_polling()
 updater.idle()
