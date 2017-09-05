@@ -12,8 +12,8 @@ import datetime
 import time
 import os
 
-HOUR_I_WANNA_GET_MESSAGE = 14
-MINUTES_I_WANNA_GET_MESSAGE = 16
+HOUR_I_WANNA_GET_MESSAGE = int( os.environ['hour'] )
+MINUTES_I_WANNA_GET_MESSAGE = int( os.environ['minute'] )
 
 TOKEN_TELEGRAM = os.environ['TOKEN_TELEGRAM']
 bot = telegram.Bot(TOKEN_TELEGRAM)
