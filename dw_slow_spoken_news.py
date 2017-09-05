@@ -69,14 +69,15 @@ dp = updater.dispatcher
 updater.dispatcher.add_handler(CommandHandler('start', start))
 
 def ciao(bot, job):
+	print("func ciao")
 	text, caption, mp3Url = getDailyNews()
 	for chat_id in chat_idList:
 		bot.sendMessage(chat_id = chat_id, text = text, parse_mode="Html")
 		bot.sendAudio( chat_id = chat_id, audio = mp3Url, caption = caption )
 
 j = updater.job_queue
-HOUR_I_WANNA_GET_MESSAGE = 12
-MINUTES_I_WANNA_GET_MESSAGE = 17
+HOUR_I_WANNA_GET_MESSAGE = 13
+MINUTES_I_WANNA_GET_MESSAGE = 28
 utc_offset_heroku = time.localtime().tm_gmtoff / 3600
 print(utc_offset_heroku)
 hour = HOUR_I_WANNA_GET_MESSAGE+ ( int(utc_offset_heroku) - 2 ) # 2 is my offset
