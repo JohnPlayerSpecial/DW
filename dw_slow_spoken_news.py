@@ -76,8 +76,8 @@ def ciao(bot, job):
 		bot.sendAudio( chat_id = chat_id, audio = mp3Url, caption = caption )
 
 j = updater.job_queue
-HOUR_I_WANNA_GET_MESSAGE = 13
-MINUTES_I_WANNA_GET_MESSAGE = 55
+HOUR_I_WANNA_GET_MESSAGE = 14
+MINUTES_I_WANNA_GET_MESSAGE = 1
 utc_offset_heroku = time.localtime().tm_gmtoff / 3600
 print(utc_offset_heroku)
 hour = HOUR_I_WANNA_GET_MESSAGE+ ( int(utc_offset_heroku) - 2 ) # 2 is my offset
