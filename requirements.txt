@@ -5,3 +5,4 @@ telegram==0.0.1
 newspaper3k==0.1.9
 textblob==0.13.0
 requests==2.18.4
+nltk==3.2.4
