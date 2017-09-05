@@ -77,7 +77,7 @@ def ciao(bot, job):
 
 j = updater.job_queue
 HOUR_I_WANNA_GET_MESSAGE = 13
-MINUTES_I_WANNA_GET_MESSAGE = 36
+MINUTES_I_WANNA_GET_MESSAGE = 38
 utc_offset_heroku = time.localtime().tm_gmtoff / 3600
 print(utc_offset_heroku)
 hour = HOUR_I_WANNA_GET_MESSAGE+ ( int(utc_offset_heroku) - 2 ) # 2 is my offset
