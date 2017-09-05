@@ -12,6 +12,9 @@ import datetime
 import time
 import os
 
+HOUR_I_WANNA_GET_MESSAGE = 14
+MINUTES_I_WANNA_GET_MESSAGE = 13
+
 TOKEN_TELEGRAM = os.environ['TOKEN_TELEGRAM']
 bot = telegram.Bot(TOKEN_TELEGRAM)
 TELEGRAPH_ACCOUNT = 'DW'
@@ -76,8 +79,7 @@ def ciao(bot, job):
 		bot.sendAudio( chat_id = chat_id, audio = mp3Url, caption = caption )
 
 j = updater.job_queue
-HOUR_I_WANNA_GET_MESSAGE = 14
-MINUTES_I_WANNA_GET_MESSAGE = 4
+
 utc_offset_heroku = time.localtime().tm_gmtoff / 3600
 print(utc_offset_heroku)
 hour = HOUR_I_WANNA_GET_MESSAGE+ ( int(utc_offset_heroku) - 2 ) # 2 is my offset
