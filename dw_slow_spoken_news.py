@@ -76,12 +76,12 @@ def ciao(bot, job):
 
 j = updater.job_queue
 HOUR_I_WANNA_GET_MESSAGE = 12
-MINUTES_I_WANNA_GET_MESSAGE = 13
+MINUTES_I_WANNA_GET_MESSAGE = 17
 utc_offset_heroku = time.localtime().tm_gmtoff / 3600
 print(utc_offset_heroku)
 hour = HOUR_I_WANNA_GET_MESSAGE+ ( int(utc_offset_heroku) - 2 ) # 2 is my offset
 print(hour)
-time2 = datetime.time(hour ,MINUTES_I_WANNA_GET_MESSAGES)
+time2 = datetime.time(hour ,MINUTES_I_WANNA_GET_MESSAGE)
 
 j.run_daily(ciao, time2 )
 
